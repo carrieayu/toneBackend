@@ -3,23 +3,26 @@ package com.tone.backend.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table (name = "element")
-public class Element {
+public class Element implements Serializable {
 
     @Id
     @GeneratedValue
     private int id_element;
-    private int id_floor;
+    @ManyToOne
+    @JoinColumn(name = "id_floor", insertable = false, updatable = false)
+    @Fetch(FetchMode.JOIN)
+    private Floor id_floor;
     private int association_key;
     private int zone;
     private int room_index;
