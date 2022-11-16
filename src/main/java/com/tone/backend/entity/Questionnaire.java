@@ -14,18 +14,18 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "questionnaire")
+@Table(name = "QUESTIONNAIRE")
 public class Questionnaire {
 
     @Id
     @GeneratedValue
-    private int id_questionnaire;
-    private Character display;
-    private String note;
-    private String init_note;
-    private String file_name;
-    private String email_address;
-    private int is_init;
-    private LocalDateTime due_datetime;
-    private LocalDateTime submit_datetime;
+    private int ID_QUESTIONNAIRE;
+    private Character DISPLAY;
+    private String NOTE;
+    private String INIT_NOTE;
+    private String FILE_NAME;
+    private String EMAIL_ADDRESS;
+    private int IS_INIT;
+    private LocalDateTime DUE_DATETIME;
+    private LocalDateTime SUBMIT_DATETIME;
 }
