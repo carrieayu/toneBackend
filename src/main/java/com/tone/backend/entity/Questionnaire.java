@@ -20,7 +20,7 @@ public class Questionnaire {
     @Id
     @GeneratedValue
     private int ID_QUESTIONNAIRE;
-    private Character DISPLAY;
+    private Character DISPLAY_ID;
     private String NOTE;
     private String INIT_NOTE;
     private String FILE_NAME;
