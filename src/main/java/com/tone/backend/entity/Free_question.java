@@ -13,17 +13,18 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "free_question")
+@Table(name = "FREE_QUESTION")
 public class Free_question {
 
     @Id
     @GeneratedValue
-    private int id_free_question;
-    private int id_floor;
-    private int associate_key;
-    private Character question;
-    private String answer;
-    private String init_answer;
-    private int is_answered;
-    private String item_on_drawings_json;
+    private int ID_FREE_QUESTION;
+    private int ID_FLOOR;
+    private int ASSOCIATION_KEY;
+    private int QUESTION_INDEX;
+    private Character QUESTION;
+    private String ANSWER;
+    private String INIT_ANSWER;
+    private int IS_ANSWERED;
+    private String ITEM_ON_DRAWINGS_JSON;
 }

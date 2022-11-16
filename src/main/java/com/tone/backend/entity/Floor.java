@@ -13,13 +13,13 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "floor")
+@Table(name = "FLOOR")
 public class Floor {
 
     @Id
     @GeneratedValue
-    private int id_floor;
-    private int id_questionnaire;
-    private String floor_name;
-    private int floor_index;
+    private int ID_FLOOR;
+    private int ID_QUESTIONNAIRE;
+    private String FLOOR_NAME;
+    private int FLOOR_INDEX;
 }

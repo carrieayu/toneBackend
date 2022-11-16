@@ -13,6 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+<<<<<<< Updated upstream
 @Table (name = "element")
 public class Element implements Serializable {
 
@@ -38,6 +39,30 @@ public class Element implements Serializable {
     private int status;
     private int is_answered;
     private String object_on_drawings_json;
+=======
+@Table (name = "ELEMENT")
+public class Element {
+
+    @Id
+    @GeneratedValue
+    private int ID_ELEMENT;
+    private int ID_FLOOR;
+    private int ASSOCIATION_KEY;
+    private int ZONE;
+    private int ROOM_INDEX;
+    private String ROOM_NAME;
+    private int AREA_INDEX;
+    private String AREA_NAME;
+    private String SERIAL_CODE;
+    private String INIT_SERIAL_CODE;
+    private String ELEMENT_NAME;
+    private String INIT_ELEMENT_NAME;
+    private String SALER;
+    private String INIT_SALER;
+    private int STATUS;
+    private int IS_ANSWERED;
+    private String OBJECTS_ON_DRAWINGS_JSON;
+>>>>>>> Stashed changes
 
 
 }
