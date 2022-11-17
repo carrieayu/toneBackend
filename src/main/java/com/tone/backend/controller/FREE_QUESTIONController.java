@@ -1,35 +1,35 @@
 package com.tone.backend.controller;
 
-import com.tone.backend.entity.Free_question;
-import com.tone.backend.service.Free_questionService;
+import com.tone.backend.entity.FREE_QUESTION;
+import com.tone.backend.service.FREE_QUESTIONService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class Free_questionController {
+public class FREE_QUESTIONController {
 
     @Autowired
-    private Free_questionService service;
+    private FREE_QUESTIONService service;
 
     @PostMapping("/addFree_question")
-    public Free_question addFree_question(@RequestBody Free_question free_question){
+    public FREE_QUESTION addFree_question(@RequestBody FREE_QUESTION free_question){
         return service.saveFree_question(free_question);
     }
 
     @PostMapping("/addFree_questions")
-    public List<Free_question> addFree_questions(@RequestBody List<Free_question> free_questions){
-        return service.saveFree_questions(free_questions);
+    public List<FREE_QUESTION> addFree_questions(@RequestBody List<FREE_QUESTION> FREEQUESTIONS){
+        return service.saveFree_questions(FREEQUESTIONS);
     }
 
     @GetMapping("/free_questions")
-    public List<Free_question> Free_question(){
+    public List<FREE_QUESTION> Free_question(){
         return service.getFree_questions();
     }
 
     @GetMapping("/free_questionById/{id}")
-    public Free_question findFree_questionById(@PathVariable int id){
+    public FREE_QUESTION findFree_questionById(@PathVariable int id){
         return service.getFree_questionById(id);
     }
 

@@ -3,23 +3,25 @@ package com.tone.backend.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "FREE_QUESTION")
-public class Free_question {
+public class FREE_QUESTION {
 
     @Id
     @GeneratedValue
     private int ID_FREE_QUESTION;
-    private int ID_FLOOR;
+    @ManyToOne
+    @JoinColumn(name = "ID_FLOOR")
+    @Fetch(FetchMode.JOIN)
+    private FLOOR ID_FLOOR;
     private int ASSOCIATION_KEY;
     private int QUESTION_INDEX;
     private Character QUESTION;

@@ -1,35 +1,35 @@
 package com.tone.backend.controller;
 
-import com.tone.backend.entity.Floor;
-import com.tone.backend.service.FloorService;
+import com.tone.backend.entity.FLOOR;
+import com.tone.backend.service.FLOORService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class FloorController {
+public class FLOORController {
 
     @Autowired
-    private FloorService service;
+    private FLOORService service;
 
     @PostMapping("/addFloor")
-    public Floor addFloor(@RequestBody Floor floor){
+    public FLOOR addFloor(@RequestBody FLOOR floor){
         return service.saveFloor(floor);
     }
 
     @PostMapping("/addFloors")
-    public List<Floor> addFloors(@RequestBody List<Floor> floors){
-        return service.saveFloors(floors);
+    public List<FLOOR> addFloors(@RequestBody List<FLOOR> FLOORS){
+        return service.saveFloors(FLOORS);
     }
 
     @GetMapping("/floors")
-    public List<Floor> findAllFloors(){
+    public List<FLOOR> findAllFloors(){
         return service.getFloors();
     }
 
     @GetMapping("/floorById/{id}")
-    public Floor findFloorById(@PathVariable int id){
+    public FLOOR findFloorById(@PathVariable int id){
         return service.getFloorById(id);
     }
 

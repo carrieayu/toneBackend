@@ -1,35 +1,35 @@
 package com.tone.backend.controller;
 
-import com.tone.backend.entity.Questionnaire;
-import com.tone.backend.service.QuestionnaireService;
+import com.tone.backend.entity.QUESTIONNAIRE;
+import com.tone.backend.service.QUESTIONNAIREService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class QuestionnaireController {
+public class QUESTIONNAIREController {
 
     @Autowired
-    private QuestionnaireService service;
+    private QUESTIONNAIREService service;
 
     @PostMapping("/addQuestionnaire")
-    public Questionnaire addQuestionnaire(@RequestBody Questionnaire questionnaire){
+    public QUESTIONNAIRE addQuestionnaire(@RequestBody QUESTIONNAIRE questionnaire){
         return service.saveQuestionnaire(questionnaire);
     }
 
     @PostMapping("/addQuestionnaires")
-    public List<Questionnaire> addQuestionnaires(@RequestBody List<Questionnaire> questionnaires){
-        return service.saveQuestionnaires(questionnaires);
+    public List<QUESTIONNAIRE> addQuestionnaires(@RequestBody List<QUESTIONNAIRE> QUESTIONNAIRES){
+        return service.saveQuestionnaires(QUESTIONNAIRES);
     }
 
     @GetMapping("/questionnaire")
-    public List<Questionnaire> findAllQuestionnaire(){
+    public List<QUESTIONNAIRE> findAllQuestionnaire(){
         return service.getQuestionnaire();
     }
 
     @GetMapping("/questionnaireById/{id}")
-    public Questionnaire findQuestionnaireById(@PathVariable int id){
+    public QUESTIONNAIRE findQuestionnaireById(@PathVariable int id){
         return service.getQuestionnaireById(id);
     }
 

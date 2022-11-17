@@ -1,31 +1,31 @@
 package com.tone.backend.service;
 
-import com.tone.backend.entity.Floor;
-import com.tone.backend.repository.FloorRepository;
+import com.tone.backend.entity.FLOOR;
+import com.tone.backend.repository.FLOORRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class FloorService {
+public class FLOORService {
 
     @Autowired
-    private FloorRepository repository;
+    private FLOORRepository repository;
 
-    public Floor saveFloor(Floor floor){
+    public FLOOR saveFloor(FLOOR floor){
         return repository.save(floor);
     }
 
-    public List<Floor> saveFloors(List<Floor> floors){
-        return repository.saveAll(floors);
+    public List<FLOOR> saveFloors(List<FLOOR> FLOORS){
+        return repository.saveAll(FLOORS);
     }
 
-    public List<Floor> getFloors(){
+    public List<FLOOR> getFloors(){
         return repository.findAll();
     }
 
-    public Floor getFloorById(int id){
+    public FLOOR getFloorById(int id){
         return repository.findById(id).orElse(null);
     }
 

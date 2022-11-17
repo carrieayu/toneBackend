@@ -8,24 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "QUESTIONNAIRE")
-public class Questionnaire {
+@Table(name = "FLOOR")
+public class FLOOR {
 
     @Id
     @GeneratedValue
+    private int ID_FLOOR;
     private int ID_QUESTIONNAIRE;
-    private Character DISPLAY_ID;
-    private String NOTE;
-    private String INIT_NOTE;
-    private String FILE_NAME;
-    private String EMAIL_ADDRESS;
-    private int IS_INIT;
-    private LocalDateTime DUE_DATETIME;
-    private LocalDateTime SUBMIT_DATETIME;
+    private String FLOOR_NAME;
+    private int FLOOR_INDEX;
 }
